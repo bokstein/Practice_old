@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.practice"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+        
+        <uses-permission android:name="android.permission.INTERNET" />
+		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.practice.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.screens.FirstScreen" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.example.action.SHOWSCREEN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.screens.SecondScreen" android:label="@string/app_name">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.screens.ThirdScreen" android:label="@string/app_name">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.screens.FourthScreen" android:label="@string/app_name">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.example.broadcasts.BroadCastExample">
+            <intent-filter>
+                <action android:name="com.example.action.SHOWSCREEN" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>       
+        </receiver>
+        <service android:enabled="true" android:name="com.example.services.ExampleService" >
+        </service>
+        <receiver android:name="com.example.services.ExampleService$StringReceiver">
+            <intent-filter>
+                <action android:name="com.example.action.CHANGESTRING" />
+            </intent-filter>       
+        </receiver>
+        
+    </application>
+    
+</manifest>
